@@ -1,24 +1,21 @@
 {
-  "name": "WebServerApp-Schmidt,Megan",
+  "name": "webserverapp-schmidt-megan",
   "version": "1.0.0",
-  "description": "",
+  "description": "At home project",
   "main": "index.js",
-  "scripts": {
-    "start": "node server/index.js",
-    "dev": "nodemon server/index.js"
-  },
   "dependencies": {
     "express": "^4.17.1",
     "npm": "^6.13.7"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.2"
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/meganschmidt23/WebServerApp-Schmidt-Megan.git"
   },
-  "author": "",
+  "author": "Megan Schmidt",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/meganschmidt23/WebServerApp-Schmidt-Megan/issues"
