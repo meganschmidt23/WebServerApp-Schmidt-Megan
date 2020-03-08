@@ -1,3 +1,4 @@
+
 <template>
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
@@ -18,27 +19,30 @@
 
       <router-link to="/" class="navbar-item" active-class="is-current" exact>Home</router-link>
       <router-link to="/about" class="navbar-item" active-class="is-current">About</router-link>
-      <router-link to="/game" class="navbar-item" active-class="is-current">Login</router-link>
 
 
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">
-          More
+          Let's Get Physical
         </a>
 
         <div class="navbar-dropdown">
           <a class="navbar-item">
-            About
+            Workout
           </a>
           <a class="navbar-item">
-            Jobs
+            Weight
           </a>
           <a class="navbar-item">
-            Contact
+            Water 
           </a>
           <hr class="navbar-divider">
           <a class="navbar-item">
-            Report an issue
+            Food Tracking
+          </a>
+           <hr class="navbar-divider">
+          <a class="navbar-item">
+            Goals
           </a>
         </div>
       </div>
@@ -47,7 +51,7 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-primary">
+          <a class="button is-primary" href="/signup">
             <strong>Sign up</strong>
           </a>
           <a class="button is-light" href="/login">
