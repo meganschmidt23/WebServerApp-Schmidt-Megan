@@ -27,6 +27,36 @@ const routes = [
     path: '/signup',
     name: 'Signup',
     component: () => import('../views/Signup.vue')
+  },
+  {
+    path: '/workout',
+    name: 'Workout',
+    component: () => import('../views/Workout.vue')
+  },
+  {
+    path: '/weight',
+    name: 'Weight',
+    component: () => import('../views/Weight.vue')
+  },
+  {
+    path: '/water',
+    name: 'Water',
+    component: () => import('../views/Water.vue')
+  },
+  {
+    path: '/foodtracking',
+    name: 'Food Tracking',
+    component: () => import('../views/FoodTracker.vue')
+  },
+  {
+    path: '/goals',
+    name: 'Goals',
+    component: () => import('../views/Goals.vue')
+  },
+  {
+    path: '/exercises',
+    name: 'Exercises',
+    component: () => import('../views/Exercises.vue')
   }
 ]
 

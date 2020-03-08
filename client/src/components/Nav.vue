@@ -27,23 +27,11 @@
         </a>
 
         <div class="navbar-dropdown">
-          <a class="navbar-item">
-            Workout
-          </a>
-          <a class="navbar-item">
-            Weight
-          </a>
-          <a class="navbar-item">
-            Water 
-          </a>
-          <hr class="navbar-divider">
-          <a class="navbar-item">
-            Food Tracking
-          </a>
-           <hr class="navbar-divider">
-          <a class="navbar-item">
-            Goals
-          </a>
+          <router-link to="/workout" class="navbar-item" active-class="is-current" exact>Workout</router-link>
+          <router-link to="/weight" class="navbar-item" active-class="is-current" exact>Weight</router-link>
+          <router-link to="/water" class="navbar-item" active-class="is-current" exact>Water</router-link>
+          <router-link to="/foodtracking" class="navbar-item" active-class="is-current" exact>Food Tracking</router-link>
+          <router-link to="/goals" class="navbar-item" active-class="is-current" exact>Goals</router-link>
         </div>
       </div>
     </div>
