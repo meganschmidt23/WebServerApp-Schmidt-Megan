@@ -9,7 +9,7 @@
             <i class="fas fa-bacon"></i>
                 <strong>   Breakfast</strong>
             <div class="media-content">
-                <input class="button" type="submit" value="Add another item" onclick="AddItem()"></div>
+                <input class="button" type="submit" value="Add another item" @click="addBreakfast()"></div>
         </div>
     </div> 
     <div class="hero-body">   
@@ -18,7 +18,7 @@
             <i class="fas fa-hamburger"></i>
                 <strong>   Lunch</strong>
             <div class="media-content">
-                <input class="button" type="submit" value="Add another item" onclick="AddItem()"></div>
+                <input class="button" type="submit" value="Add another item" @click="addLunch()"></div>
             </div>
       </div> 
     </div>
@@ -28,7 +28,7 @@
             <i class="fas fa-drumstick-bite"></i>
                 <strong>   Dinner</strong>
             <div class="media-content">
-                <input class="button" type="submit" value="Add another item" onclick="AddItem()"></div>
+                <input class="button" type="submit" value="Add another item" @click="addDinner()"></div>
             </div>
     </div> 
     </div>
@@ -42,7 +42,7 @@
                   <button class="delete" @click="remove(i)"></button>
                   </div>
                 <input class="input" type="text" placeholder="Text input">
-                <input class="button is-primary is-light" type="submit" value="Add another item" @click="add()"></div>
+                <input class="button is-primary is-light" type="submit" value="Add another item" @click="addSnack()"></div>
             </div>
     </div> 
     </div>
@@ -51,19 +51,15 @@
 
 
 <script>
-import {Users, add} from "../models/Users";
+import {Users, addBreakfast, addLunch, addDinner, addSnack} from "../models/Users";
 export default{
   data:()=>({
-    User
+    User,
+    Breakfast,
+    Lunch,
+    Dinner,
+    Snacks
   }),
-  methods: {
-    remove(i){
-      this.Users.Snacks.splice(i,1)
-    },
-    add(){
-      this.Users.Snacks.push({ text: this.newSnack})
-    }
-  }
 }
 
 </script>
