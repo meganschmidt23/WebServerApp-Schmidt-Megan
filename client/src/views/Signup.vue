@@ -40,6 +40,15 @@
             </label>
             </div>
         </div>
+        <div class="field">
+            <label class="label">Password</label>
+            <div class="control has-icons-left has-icons-right">
+                <input class="input is-success" type="text" placeholder="mypassword">
+                    <span class="icon is-small is-right">
+                        <i class="fas fa-check"></i>
+                    </span>
+                </div>    
+            </div>
 
         <div class="field is-grouped">
             <div class="control">
@@ -51,3 +60,12 @@
         </div>
     </section>
 </template>
+
+
+<script>
+import {Users} from "../models/Users";
+export default {
+    
+    
+}
+</script>

@@ -1,9 +1,10 @@
 <template>
   <section>
     <h1 class="title">Enter your login information:</h1>  
+  <form class="container" @submit.prevent="login"> 
   <div class="field">
   <p class="control has-icons-left has-icons-right">
-    <input class="input" type="email" placeholder="Email">
+    <input class="input" type="text" placeholder="Username" v-model="username">
     <span class="icon is-small is-left">
       <i class="fas fa-envelope"></i>
     </span>
@@ -14,7 +15,7 @@
   </div>
   <div class="field">
   <p class="control has-icons-left">
-    <input class="input" type="password" placeholder="Password">
+    <input class="input" type="text" placeholder="Password" v-model="password">
     <span class="icon is-small is-left">
       <i class="fas fa-lock"></i>
     </span>
@@ -30,15 +31,17 @@
    <figure class="image is 60x20">
       <img src="https://www.planetfitness.com/sites/default/files/feature-image/break-workout_602724.jpg">
     </figure>
+    </form>
  </section> 
 </template>
 
 <script>
 import { Login } from "../models/Users";
+
 export default {
     data(){
         return {
-            email: '',
+            username: '',
             password: '',
             error: ''
         }
@@ -46,8 +49,8 @@ export default {
     methods: {
         login(){
             try {
-                Login(this.email, this.password);
-                this.$router.push('/game');
+                Login(this.username, this.password);
+                this.$router.push('/profile');
             } catch (error) {
                 this.error = error;
             }

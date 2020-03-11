@@ -57,6 +57,12 @@ const routes = [
     path: '/exercises',
     name: 'Exercises',
     component: () => import('../views/Exercises.vue')
+  },
+  {
+    path:'/profile',
+    name: 'Profile',
+    component: () => import('../views/Profile.vue'),
+    meta: {isSecret:true}
   }
 ]
 
@@ -65,5 +71,10 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
+router.beforeEach( (to, from, next)=> {
+  if( to.meta.isSecret && !CurrentUser) next ('/login');
+  else next();
+});
 
 export default router

@@ -1,78 +1,69 @@
 <template>
-<section class="hero">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title">
-        Food Tracking
-      </h1>
-      <h2 class="subtitle">
-        Make sure to include the different foods you eat throughout the day
-      </h2>
-    </div>
-  </div>
-  <div class="container is-fluid">
-    <div class="notification">
-        <i class="fas fa-bacon"></i>
-            <strong>   Breakfast</strong>
-    </div>
-  </div>
-  <div class="box">
-  <article class="media">
-    <div class="media-content">
-        <div class="content">
+  <section class="hero">
+    <div class="hero-body">
+        <div class="container">
+          <h1 class="title">Food Tracking</h1>
+          <h2 class="subtitle">Make sure to include the different foods you eat throughout the day</h2>
         </div>
-        <input class="button" type="submit" value="Add another item" onclick="AddItem()"></button>
+        <div class="notification">
+            <i class="fas fa-bacon"></i>
+                <strong>   Breakfast</strong>
+            <div class="media-content">
+                <input class="button" type="submit" value="Add another item" onclick="AddItem()"></div>
+        </div>
+    </div> 
+    <div class="hero-body">   
+    <div class="container">  
+      <div class="notification">
+            <i class="fas fa-hamburger"></i>
+                <strong>   Lunch</strong>
+            <div class="media-content">
+                <input class="button" type="submit" value="Add another item" onclick="AddItem()"></div>
+            </div>
+      </div> 
     </div>
-  </article>
-  </div>
-  <div class="container is-fluid">
-  <div class="notification">
-        <i class="fas fa-hamburger"></i>
-            <strong>   Lunch</strong>
-  </div>
-  </div>
-  <div class="box">
-  <article class="media">
-    <div class="media-content">
-      <div class="content">
-      </div>
-      <input class="button" type="submit" value="Add another item" onclick="AddItem()"></button>
+    <div class="hero-body">
+    <div class="container">  
+      <div class="notification">
+            <i class="fas fa-drumstick-bite"></i>
+                <strong>   Dinner</strong>
+            <div class="media-content">
+                <input class="button" type="submit" value="Add another item" onclick="AddItem()"></div>
+            </div>
+    </div> 
     </div>
-  </article>
-  </div>
-  <div class="container is-fluid">
-  <div class="notification">
-        <i class="fas fa-drumstick-bite"></i>
-            <strong>   Dinner</strong>
-  </div>
-  </div>
-  <div class="box">
-  <article class="media">
-    <div class="media-content">
-      <div class="content">
-      </div>
-      <input class="button" type="submit" value="Add another item" onclick="AddItem()"></button>
+    <div class="hero-body">
+    <div class="container">  
+      <div class="notification">
+            <i class="fas fa-cookie"></i>
+                <strong>   Snacks</strong>
+            <div class="media-content" id="Snacks">
+                <div class="notification is-primary">
+                  <button class="delete" @click="remove(i)"></button>
+                  </div>
+                <input class="input" type="text" placeholder="Text input">
+                <input class="button is-primary is-light" type="submit" value="Add another item" @click="add()"></div>
+            </div>
+    </div> 
     </div>
-  </article>
-  </div>
-  <div class="container is-fluid">
-  <div class="notification">
-        <i class="fas fa-cookie"></i>
-            <strong>   Snacks</strong>
-  </div>
-  </div>
-  <div class="box">
-  <article class="media">
-    <div class="media-content">
-      <div class="content">
-      </div>
-      <input class="button" type="submit" value="Add another item" onclick="AddItem()"></button>
-    </div>
-  </article>
-</div>
-</section>
+  </section>
 </template>
 
+
 <script>
-//Need to add line so people can add and remove things
+import {Users, add} from "../models/Users";
+export default{
+  data:()=>({
+    User
+  }),
+  methods: {
+    remove(i){
+      this.Users.Snacks.splice(i,1)
+    },
+    add(){
+      this.Users.Snacks.push({ text: this.newSnack})
+    }
+  }
+}
+
 </script>
