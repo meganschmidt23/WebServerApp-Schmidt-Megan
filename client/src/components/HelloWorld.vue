@@ -3,7 +3,7 @@
     <h1>{{ msg }}</h1>
     <p>
       For some simple inspiration or ideas on different areas of the body to target, make sure to check out our
-      <a href=".../views/Exercises.vue" target="_blank" rel="noopener">Exercise page</a>.
+      <a href=".../views/Exercises.vue">Exercise page</a>.
     </p>
   </div>
 </template>

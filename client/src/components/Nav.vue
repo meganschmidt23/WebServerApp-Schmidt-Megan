@@ -2,8 +2,8 @@
 <template>
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="https://bulma.io">
-      <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+    <a class="navbar-item">
+      <img src="https://i.etsystatic.com/17285564/r/il/40c798/1615497192/il_570xN.1615497192_tmo2.jpg" width="120" height="90">
     </a>
 
     <a :class="{ 'is-active':isOpen }" @click="isOpen = !isOpen" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" >
@@ -19,6 +19,7 @@
 
       <router-link to="/" class="navbar-item" active-class="is-current" exact>Home</router-link>
       <router-link to="/about" class="navbar-item" active-class="is-current">About</router-link>
+      <router-link to="/views/Exercises" class="navbar-item" active-class="is-current">Exercises</router-link>
 
 
       <div class="navbar-item has-dropdown is-hoverable">
