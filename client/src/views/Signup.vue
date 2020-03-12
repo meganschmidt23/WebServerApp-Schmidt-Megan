@@ -3,14 +3,14 @@
         <div class="field">
             <label class="label">Name</label>
             <div class="control">
-                <input class="input" type="text" placeholder="First Name Last Name">
+                <input class="input" type="text" placeholder="First Name Last Name" v-model="name">
             </div>
         </div>
 
         <div class="field">
             <label class="label">Username</label>
             <div class="control has-icons-left has-icons-right">
-                <input class="input is-success" type="text" placeholder="myusername">
+                <input class="input is-success" type="text" placeholder="myusername" v-model="username">
             <span class="icon is-small is-left">
                 <i class="fas fa-user"></i>
             </span>
@@ -22,7 +22,7 @@
         <div class="field">
             <label class="label">Email</label>
             <div class="control has-icons-left has-icons-right">
-                <input class="input is-danger" type="email" placeholder="hello@gmail.com">
+                <input class="input is-danger" type="email" placeholder="hello@gmail.com" v-model="email">
                 <span class="icon is-small is-left">
                     <i class="fas fa-envelope"></i>
                 </span>
@@ -43,7 +43,7 @@
         <div class="field">
             <label class="label">Password</label>
             <div class="control has-icons-left has-icons-right">
-                <input class="input is-success" type="text" placeholder="mypassword">
+                <input class="input is-success" type="text" placeholder="mypassword" v-model="password">
                     <span class="icon is-small is-right">
                         <i class="fas fa-check"></i>
                     </span>
@@ -63,9 +63,12 @@
 
 
 <script>
-import {Users} from "../models/Users";
 export default {
-    
-    
+    data: () => ({
+        username: "",
+        email:"",
+        password: "",
+        name: ""
+    })    
 }
 </script>

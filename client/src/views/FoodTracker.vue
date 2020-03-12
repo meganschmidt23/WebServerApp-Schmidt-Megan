@@ -60,6 +60,12 @@ export default{
     Dinner,
     Snacks
   }),
+  methods: {
+    addBreakfast,
+    addLunch,
+    addDinner,
+    addSnack
+  }
 }
 
 </script>
