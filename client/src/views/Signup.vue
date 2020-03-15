@@ -55,7 +55,7 @@
             <button class="button is-link">Submit</button>
         </div>
         <div class="control">
-            <button class="button is-link is-light">Cancel</button>
+            <button class="button is-link is-light" @click="clear">Cancel</button>
         </div>
         </div>
     </section>
@@ -69,6 +69,14 @@ export default {
         email:"",
         password: "",
         name: ""
-    })    
+    }),
+    methods: {
+        clear () {
+            this.username="";
+            this.email="";
+            this.password="";
+            this.name="";
+        }
+    }    
 }
 </script>
