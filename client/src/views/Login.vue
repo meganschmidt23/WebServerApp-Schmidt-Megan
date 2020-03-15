@@ -2,6 +2,7 @@
   <section>
     <h1 class="title">Enter your login information:</h1>  
   <form class="container" @submit.prevent="login"> 
+    <p class="has-text-centered">{{ error }}</p>
   <div class="field">
   <p class="control has-icons-left has-icons-right">
     <input class="input" type="text" placeholder="Username" v-model="username">
@@ -23,7 +24,7 @@
   </div>
   <div class="field">
   <p class="control">
-    <button class="button is-success">
+    <button class="button is-info">
       Login
     </button>
   </p>
@@ -39,18 +40,16 @@
 import { Login } from "../models/Users";
 
 export default {
-    data(){
-        return {
+    data: () => ({
             username: '',
             password: '',
             error: ''
-        }
-    },
+    }),
     methods: {
-        login(){
+        login() {
             try {
                 Login(this.username, this.password);
-                this.$router.push('/profile');
+                this.$router.push("/profile");
             } catch (error) {
                 this.error = error;
             }
