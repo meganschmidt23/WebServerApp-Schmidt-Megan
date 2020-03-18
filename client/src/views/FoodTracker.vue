@@ -14,7 +14,7 @@
                   </div>
                 </section>  
             <div class="media-content">
-              <input class="input" type="text" placeholder="Breakfast item" v-model="newFood">
+              <input class="input" type="text" placeholder="Food item" v-model="newFood">
                 <input class="button" type="submit" value="Add another item" @click="addFood(newFood)"></div>
         </div>
     </div> 
