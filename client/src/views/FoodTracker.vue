@@ -6,66 +6,34 @@
           <h2 class="subtitle">Make sure to include the different foods you eat throughout the day</h2>
         </div>
         <div class="notification">
-            <i class="fas fa-bacon"></i>
-                <strong>   Breakfast</strong>
+            <i class="fas fa-bacon"></i><i class="fas fa-hamburger"></i><i class="fas fa-drumstick-bite"></i><i class="fas fa-cookie"></i>
+                <strong>Daily Food Intake</strong>
+                <section class="section">
+                  <div class="container" v-for="x in todos" :key="x.name">
+                      <h1>{{x.name}}</h1>
+                  </div>
+                </section>  
             <div class="media-content">
-                <input class="button" type="submit" value="Add another item" @click="addBreakfast()"></div>
+              <input class="input" type="text" placeholder="Breakfast item" v-model="newFood">
+                <input class="button" type="submit" value="Add another item" @click="addFood(newFood)"></div>
         </div>
     </div> 
-    <div class="hero-body">   
-    <div class="container">  
-      <div class="notification">
-            <i class="fas fa-hamburger"></i>
-                <strong>   Lunch</strong>
-            <div class="media-content">
-                <input class="button" type="submit" value="Add another item" @click="addLunch()"></div>
-            </div>
-      </div> 
-    </div>
-    <div class="hero-body">
-    <div class="container">  
-      <div class="notification">
-            <i class="fas fa-drumstick-bite"></i>
-                <strong>   Dinner</strong>
-            <div class="media-content">
-                <input class="button" type="submit" value="Add another item" @click="addDinner()"></div>
-            </div>
-    </div> 
-    </div>
-    <div class="hero-body">
-    <div class="container">  
-      <div class="notification">
-            <i class="fas fa-cookie"></i>
-                <strong>   Snacks</strong>
-            <div class="media-content" id="Snacks">
-                <div class="notification is-primary">
-                  <button class="delete" @click="remove(i)"></button>
-                  </div>
-                <input class="input" type="text" placeholder="Text input">
-                <input class="button is-primary is-light" type="submit" value="Add another item" @click="addSnack()"></div>
-            </div>
-    </div> 
-    </div>
   </section>
 </template>
 
 
 <script>
-import {Users, addBreakfast, addLunch, addDinner, addSnack} from "../models/Users";
+import {User} from "../models/Users";
+import {todos, addFood} from "../models/Food"
 export default{
   data:()=>({
     User,
-    Breakfast,
-    Lunch,
-    Dinner,
-    Snacks
+    todos,
+    newFood:""
   }),
   methods: {
-    addBreakfast,
-    addLunch,
-    addDinner,
-    addSnack
+    addFood
+    }
   }
-}
 
 </script>
