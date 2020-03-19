@@ -1,7 +1,7 @@
 <template>
   <section>
     <h1 class="title">Enter your login information:</h1>  
-  <form class="container" @submit.prevent="login"> 
+  <form class="box" @submit.prevent="Login"> 
     <p class="has-text-centered">{{ error }}</p>
   <div class="field">
   <p class="control has-icons-left has-icons-right">
@@ -16,7 +16,7 @@
   </div>
   <div class="field">
   <p class="control has-icons-left">
-    <input class="input" type="text" placeholder="Password" v-model="password">
+    <input class="input" type="password" placeholder="Password" v-model="password">
     <span class="icon is-small is-left">
       <i class="fas fa-lock"></i>
     </span>
@@ -24,7 +24,7 @@
   </div>
   <div class="field">
   <p class="control">
-    <button class="button is-info">
+    <button class="button is-info" @click="Login(username, password)">
       Login
     </button>
   </p>
@@ -37,16 +37,16 @@
 </template>
 
 <script>
-import { Login } from "../models/Users";
+import {Login} from "../models/Users.js";
 
 export default {
     data: () => ({
-            username: '',
-            password: '',
-            error: ''
+            username: "",
+            password: "",
+            error: "",
     }),
     methods: {
-        login() {
+        Login() {
             try {
                 Login(this.username, this.password);
                 this.$router.push("/profile");
