@@ -1,7 +1,7 @@
 <template>
   <section>
     <h1 class="title">Enter your login information:</h1>  
-  <form class="box" @submit.prevent="Login"> 
+  <form class="box" @submit.prevent="login"> 
     <p class="has-text-centered">{{ error }}</p>
   <div class="field">
   <p class="control has-icons-left has-icons-right">
@@ -24,7 +24,7 @@
   </div>
   <div class="field">
   <p class="control">
-    <button class="button is-info" @click="Login(username, password)">
+    <button class="button is-info">
       Login
     </button>
   </p>
@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import {Login} from "../models/Users.js";
+import { Login } from "../models/Users";
 
 export default {
     data: () => ({
@@ -46,7 +46,7 @@ export default {
             error: "",
     }),
     methods: {
-        Login() {
+        login() {
             try {
                 Login(this.username, this.password);
                 this.$router.push("/profile");

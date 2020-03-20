@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 
+import { CurrentUser } from '../models/Users'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -62,7 +64,7 @@ const routes = [
     path:'/profile',
     name: 'Profile',
     component: () => import('../views/Profile.vue'),
-    meta: {isSecret:true}
+    meta: { isSecret: true }
   }
 ]
 

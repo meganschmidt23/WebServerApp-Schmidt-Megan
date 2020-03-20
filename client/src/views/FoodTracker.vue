@@ -23,11 +23,9 @@
 
 
 <script>
-import {User} from "../models/Users";
 import {todos, addFood} from "../models/Food"
 export default{
   data:()=>({
-    User,
     todos,
     newFood:""
   }),
