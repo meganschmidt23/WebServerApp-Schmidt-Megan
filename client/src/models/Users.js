@@ -1,5 +1,6 @@
 const User = [
     {Name: 'Bob Smith', Username: 'BobSmith1', Email: 'bobsmith1@aol.com', Password:'BobbySmith' },
+    {Name: 'Easy', Username: 'a', Email: 'a@aim.com', Password:'a'}
 ];
 
 export let CurrentUser = null;

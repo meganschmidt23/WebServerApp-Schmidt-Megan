@@ -29,11 +29,9 @@
 
 
 <script>
-import {User} from "../models/Users";
 import {todos, addGoal} from "../models/Goals"
 export default{
   data:()=>({
-    User,
     todos,
     newGoal:""
   }),

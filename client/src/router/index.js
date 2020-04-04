@@ -33,27 +33,32 @@ const routes = [
   {
     path: '/workout',
     name: 'Workout',
-    component: () => import('../views/Workout.vue')
+    component: () => import('../views/Workout.vue'),
+    meta: { isSecret: true }
   },
   {
     path: '/weight',
     name: 'Weight',
-    component: () => import('../views/Weight.vue')
+    component: () => import('../views/Weight.vue'),
+    meta: { isSecret: true }
   },
   {
     path: '/water',
     name: 'Water',
-    component: () => import('../views/Water.vue')
+    component: () => import('../views/Water.vue'),
+    meta: { isSecret: true }
   },
   {
     path: '/foodtracking',
     name: 'Food Tracking',
-    component: () => import('../views/FoodTracker.vue')
+    component: () => import('../views/FoodTracker.vue'),
+    meta: { isSecret: true }
   },
   {
     path: '/goals',
     name: 'Goals',
-    component: () => import('../views/Goals.vue')
+    component: () => import('../views/Goals.vue'),
+    meta: { isSecret: true }
   },
   {
     path: '/exercises',
