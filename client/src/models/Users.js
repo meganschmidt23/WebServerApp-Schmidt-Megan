@@ -1,6 +1,6 @@
 const User = [
-    {Name: 'Bob Smith', Username: 'BobSmith1', Email: 'bobsmith1@aol.com', Password:'BobbySmith' },
-    {Name: 'Easy', Username: 'a', Email: 'a@aim.com', Password:'a'}
+    {Name: 'Bob Smith', Username: 'BobSmith1', Email: 'bobsmith1@aol.com', Password:'BobbySmith', isAdmin:false },
+    {Name: 'Easy', Username: 'a', Email: 'a@aim.com', Password:'a', isAdmin:true}
 ];
 
 export let CurrentUser = null;
