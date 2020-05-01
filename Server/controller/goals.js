@@ -5,7 +5,7 @@ const about = require('../models/Goals')
 const router = express.Router();
 
 router
-    .get('/goals', (req, res) => { 
+    .get('/', (req, res) => { 
         res.send({
             Goals
     })

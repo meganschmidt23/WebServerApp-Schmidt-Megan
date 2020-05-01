@@ -4,7 +4,7 @@ const router = express.Router();
 const Exercises = require('../models/Exercises')
 
 router
-    .get ("/exercises", (req,res)=> res.send({
+    .get ("/", (req,res)=> res.send({
         Exercises: Exercises.exerciseList
     }))
 

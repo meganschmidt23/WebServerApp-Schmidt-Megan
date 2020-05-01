@@ -5,7 +5,7 @@ const users = require('../models/Users');
 const router = express.Router();
 
 router
-    .post('/login', (req, res) => {
+    .post('/', (req, res) => {
         try {
             const user = users.Login(req.body.username, req.body.password);
             res.send( { ...user, Password: undefined } );
