@@ -1,9 +1,15 @@
-const User = [
-    {Name: 'Bob Smith', Username: 'BobSmith1', Email: 'bobsmith1@aol.com', Password:'BobbySmith', isAdmin:false },
-    {Name: 'Easy', Username: 'a', Email: 'a@aim.com', Password:'a', isAdmin:true}
-];
+import myFetch from "./myFetch";
 
-export let CurrentUser = null;
+export default {
+    State: {},
+    Init() {
+        myFetch('/exercises')
+            .then(x=> { 
+                this.State = x;
+                console.log(x);
+     })
+    }
+}
 
 export function Login(username, password) {
   const user = User.find(x => x.Username == username);
@@ -12,13 +18,3 @@ export function Login(username, password) {
   
   return CurrentUser = user;
 }
-
-export let State= {};
-
-export function Init(){
-  myFetch('http://localhost:3000/game')
-      .then(x=> { 
-          State = x;
-          console.log(x);
-      });
-    }

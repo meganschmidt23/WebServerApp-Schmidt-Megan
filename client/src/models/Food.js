@@ -1,13 +1,19 @@
-export const todos = [
-    {
-        name: "Example"
-    }
-];
+import myFetch from "./myFetch";
 
-export function addFood(newFood) {
-    this.todos.push(
+export default {
+    State: {},
+    Init() {
+        myFetch('/exercises')
+            .then(x=> { 
+                this.State = x;
+                console.log(x);
+     })
+    },
+    addFood(newFood) {
+        this.todos.push(
         {
             name: newFood
         }
     )
+}
 }

@@ -2,6 +2,6 @@ const exerciseList = [
     {exercise: "Decline pushups"}
 ];
 
-module.export = {
-    exerciseList,
+module.exports = {
+    exerciseList
 }

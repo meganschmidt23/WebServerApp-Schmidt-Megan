@@ -1,16 +1,24 @@
-const waterTotal= 0;
+import myFetch from "./myFetch";
 
-const
+export default {
+    State: {},
+    Init() {
+        myFetch('/exercises')
+            .then(x=> { 
+                this.State = x;
+                console.log(x);
+     })
+    },
     plus1(){
-        this.x += 1;
+        this.waterTotal+= 1;
     },
     plus5(){
-        this.x +=5;
+        this.waterTotal +=5;
     },
     plus10(){
-        this.x+= 10;
+        this.waterTotal= 10;
     },
     plus20(){
-        this.x+=20
+        this.waterTotal+=20
     }
 }
