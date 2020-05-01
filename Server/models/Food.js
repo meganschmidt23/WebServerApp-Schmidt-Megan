@@ -1,13 +1,16 @@
-export const todos = [
-    {
-        name: "Example"
-    }
+const foodList = [
+    {name: "Example", calories:12}
 ];
 
-export function addFood(newFood) {
-    this.todos.push(
+function addFood(newFood) {
+    this.foodList.push(
         {
-            name: newFood
+            food: {name,calories}
         }
     )
+}
+
+module.export={
+    foodList,
+    addFood
 }

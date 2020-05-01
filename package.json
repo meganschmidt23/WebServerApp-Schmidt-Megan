@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "description": "At home project",
   "main": "index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "nodemon --watch ./server server/index.js"
+  },
   "dependencies": {
     "express": "^4.17.1",
     "npm": "^6.13.7"
   },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "devDependencies": {
+    "nodemon": "^2.0.3"
   },
   "repository": {
     "type": "git",

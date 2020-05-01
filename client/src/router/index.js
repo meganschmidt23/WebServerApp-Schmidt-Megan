@@ -31,12 +31,6 @@ const routes = [
     component: () => import('../views/Signup.vue')
   },
   {
-    path: '/workout',
-    name: 'Workout',
-    component: () => import('../views/Workout.vue'),
-    meta: { isSecret: true }
-  },
-  {
     path: '/weight',
     name: 'Weight',
     component: () => import('../views/Weight.vue'),

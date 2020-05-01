@@ -12,3 +12,13 @@ export function Login(username, password) {
   
   return CurrentUser = user;
 }
+
+export let State= {};
+
+export function Init(){
+  myFetch('http://localhost:3000/game')
+      .then(x=> { 
+          State = x;
+          console.log(x);
+      });
+    }

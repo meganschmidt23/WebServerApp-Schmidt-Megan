@@ -28,7 +28,6 @@
         </a>
 
         <div class="navbar-dropdown">
-          <router-link to="/workout" class="navbar-item" active-class="is-current" exact>Workout</router-link>
           <router-link to="/weight" class="navbar-item" active-class="is-current" exact>Weight</router-link>
           <router-link to="/water" class="navbar-item" active-class="is-current" exact>Water</router-link>
           <router-link to="/foodtracking" class="navbar-item" active-class="is-current" exact>Food Tracking</router-link>

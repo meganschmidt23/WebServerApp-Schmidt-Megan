@@ -1,13 +1,18 @@
-export const todos = [
+const Goals = [
     {
         goal: "Keep workin' it, beautiful"
     }
 ];
 
-export function addGoal(newGoal) {
-    this.todos.push(
+function addGoal(newGoal) {
+    this.Goals.push(
         {
             goal: newGoal
         }
     )
+}
+
+module.export = {
+    Goals,
+    addGoal
 }

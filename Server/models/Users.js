@@ -3,12 +3,18 @@ const User = [
     {Name: 'Easy', Username: 'a', Email: 'a@aim.com', Password:'a', isAdmin:true}
 ];
 
-export let CurrentUser = null;
+let CurrentUser = null;
 
-export function Login(username, password) {
+function Login(username, password) {
   const user = User.find(x => x.Username == username);
   if(!user) throw Error('User not found');
   if(user.Password != password) throw Error ('Wrong Password');
   
   return CurrentUser = user;
+}
+
+module.export = {
+  User,
+  CurrentUser,
+  Login
 }
