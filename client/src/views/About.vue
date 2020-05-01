@@ -25,13 +25,12 @@ import About from "../models/About"
 
 export default {
   data: () => ({
-    image: About.State.Photos[0].image,
-    name: About.State.Photos[0].name
+    image: About.State.Picture[0].imgSrc,
+    name: About.State.Picture[0].imgName
   }),
-  methods: {
-    created() {
-      About.Init()
-    }
+  methods: {},
+  created() {
+    About.Init()
   }
 }
 </script>

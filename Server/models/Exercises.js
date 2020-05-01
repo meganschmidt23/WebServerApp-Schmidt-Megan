@@ -1,4 +1,4 @@
-export const exerciseList = [
+const exerciseList = [
     {exercise: "Decline pushups"}
 ];
 

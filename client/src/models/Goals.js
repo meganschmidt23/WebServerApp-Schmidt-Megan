@@ -1,11 +1,11 @@
-export const todos = [
+export const Goals = [
     {
         goal: "Keep workin' it, beautiful"
     }
 ];
 
 export function addGoal(newGoal) {
-    this.todos.push(
+    this.Goals.push(
         {
             goal: newGoal
         }
