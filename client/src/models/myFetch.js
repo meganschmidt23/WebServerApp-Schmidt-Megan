@@ -1,9 +1,16 @@
+import { CurrentUser } from "./Users";
+
 const api_root = "http://localhost:4000";
 
 export default async function myFetch(url, data){
 
     let response;
+
     const headers = {};
+    if(CurrentUser && CurrentUser.userId != null){
+        headers.authorization = "bearer " + CurrentUser.userId
+    }
+
     if(data){
         response = await fetch(api_root + url, {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.

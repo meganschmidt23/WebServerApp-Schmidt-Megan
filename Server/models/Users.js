@@ -11,8 +11,5 @@ module.exports = {
       if(user.Password != password) throw Error('Wrong Password');
   
       return user;
-  },
-  Get(userId) {
-      return Users[userId]
   }
 }
