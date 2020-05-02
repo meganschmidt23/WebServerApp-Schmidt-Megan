@@ -1,5 +1,5 @@
 const Weights = [
-    {Name: 'Bobby', Weight: 230}
+    {Name: 'Bobby', Date:"3/22/19", Weight: 230}
 ]
 
 module.exports = {

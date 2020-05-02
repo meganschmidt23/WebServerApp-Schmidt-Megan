@@ -13,14 +13,14 @@
         </div>
     </div>
     <div class="container">
-        <div class="notification" v-for="x in weights" :key="x.weight">
-            {{x.weight}}
+        <div class="notification" v-for="x in weights" :key="x.Weight">
+            {{x.Weight}}
         </div>
     </div>
     <div class="column">
        Weight:
        <div class="control">
-            <input class="input" type="text" placeholder="lbs" v-model="weight">
+            <input class="input" type="text" placeholder="lbs" v-model="Weight">
         </div>
     </div>
   </div>
@@ -29,9 +29,10 @@
 </template>
 
 <script>
+import Weight from '../models/Weight'
 export default {
     data: {
-        weights: [],
+        weights: Weight.State.Weight,
         date: "",
         weight: "",
     },
@@ -40,6 +41,9 @@ export default {
             this.weights.push({date, weight})
         }
 
+    },
+    created(){
+        Weight.Init()
     }
 
 }

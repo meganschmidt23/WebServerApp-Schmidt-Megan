@@ -3,12 +3,9 @@ import myFetch from "./myFetch";
 export default {
     State: {},
     Init() {
-        myFetch('/exercises')
+        myFetch('/weight')
             .then(x=> { 
                 this.State = x;
                 console.log(x);
-     })},
-    addWeight() {
-        this.weights.push({date, weight})
-    }
+     })}
 }
