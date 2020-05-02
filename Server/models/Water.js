@@ -1,4 +1,4 @@
-const waterTotal = [{Name: 'Bobby', waterTotal: 0}];
+const waterTotal = [{watertotal: 0}];
 
 module.exports = {
     waterTotal
