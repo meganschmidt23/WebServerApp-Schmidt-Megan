@@ -30,7 +30,7 @@ import Water from '../models/Water'
 
 export default {
     data: () => ({
-        water: Water.State.Water.watertotal
+        water: Water.State.Water[0].watertotal //index of where you're looking
     }),
     methods: {
         plus1(){

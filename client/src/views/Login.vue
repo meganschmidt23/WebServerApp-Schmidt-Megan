@@ -46,14 +46,14 @@ export default {
             error: "",
     }),
     methods: {
-        login() {
+         async login(){
             try {
-                Login(this.username, this.password);
-                this.$router.push("/profile");
+                await Login(this.email, this.password);
+                this.$router.push('/game');
             } catch (error) {
                 this.error = error;
             }
         }
-    }
+}
 }
 </script>

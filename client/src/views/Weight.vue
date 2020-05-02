@@ -2,8 +2,8 @@
 <section>
   <div class="columns is-gapless">
       <div class="container">
-        <div class="notification" v-for="x in weights" :key="x.date">
-            {{x.date}}
+        <div class="notification" v-for="x in Weight.State.Weight" :key="x.Date">
+            {{x.Date}}
         </div>
     </div>
     <div class="column">
@@ -13,14 +13,14 @@
         </div>
     </div>
     <div class="container">
-        <div class="notification" v-for="x in weights" :key="x.Weight">
+        <div class="notification" v-for="x in Weight.State.Weight" :key="x.Weight">
             {{x.Weight}}
         </div>
     </div>
     <div class="column">
        Weight:
        <div class="control">
-            <input class="input" type="text" placeholder="lbs" v-model="Weight">
+            <input class="input" type="text" placeholder="lbs" v-model="weight">
         </div>
     </div>
   </div>
@@ -31,11 +31,12 @@
 <script>
 import Weight from '../models/Weight'
 export default {
-    data: {
+    data:() => ({
+        Weight,
         weights: Weight.State.Weight,
         date: "",
         weight: "",
-    },
+    }),
     methods: {
         addWeight() {
             this.weights.push({date, weight})
