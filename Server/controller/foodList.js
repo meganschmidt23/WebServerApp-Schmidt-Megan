@@ -1,13 +1,13 @@
 const express = require('express');
 
-const about = require('../models/Food')
+const food = require('../models/Food')
 
 const router = express.Router();
 
 router
     .get('/', (req, res) => { 
         res.send({
-            Food: foodList 
+            Food: food.foodList 
 
     })
 });

@@ -9,7 +9,7 @@
             <i class="fas fa-bacon"></i><i class="fas fa-hamburger"></i><i class="fas fa-drumstick-bite"></i><i class="fas fa-cookie"></i>
                 <strong>Daily Food Intake</strong>
                 <section class="section">
-                  <div class="container" v-for="x in todos" :key="x.name">
+                  <div class="container" v-for="x in food" :key="x.name">
                       <h1>{{x.name}}</h1>
                   </div>
                 </section>  
@@ -23,14 +23,21 @@
 
 
 <script>
-import {todos, addFood} from "../models/Food"
+import Food from "../models/Food"
 export default{
   data:()=>({
-    todos,
+    food: Food.State.Food,
     newFood:""
   }),
   methods: {
-    addFood
+    addFood(newFood) {
+        this.Food.push(
+        {
+            name: newFood
+        }
+    )}},
+    created(){
+        Food.Init()
     }
   }
 

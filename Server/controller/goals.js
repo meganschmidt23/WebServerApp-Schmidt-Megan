@@ -1,6 +1,6 @@
 const express = require('express');
 
-const about = require('../models/Goals')
+const Goals = require('../models/Goals')
 
 const router = express.Router();
 

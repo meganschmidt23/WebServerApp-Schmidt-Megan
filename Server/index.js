@@ -27,6 +27,7 @@ app
     .use('/goals', goalsController)
     .use('/login', loginController)
     .use('/water', waterController)
+    .use('/food', foodListController)
     .use( (err, req, res, next ) => {
         console.error(err);
         const errorCode = err.code || 500;

@@ -3,17 +3,10 @@ import myFetch from "./myFetch";
 export default {
     State: {},
     Init() {
-        myFetch('/exercises')
+        myFetch('/food')
             .then(x=> { 
                 this.State = x;
                 console.log(x);
      })
     },
-    addFood(newFood) {
-        this.todos.push(
-        {
-            name: newFood
-        }
-    )
-}
 }

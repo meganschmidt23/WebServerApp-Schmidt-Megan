@@ -15,7 +15,7 @@
                     </figure>
                 </div>
             </div>
-                <div class="container" v-for="x in todos" :key="x.goal">
+                <div class="container" v-for="x in goals" :key="x.goal">
                     <h1>{{x.goal}}</h1>
                 </div>  
             <div class="media-content">
@@ -29,15 +29,23 @@
 
 
 <script>
-import {todos, addGoal} from "../models/Goals"
+import Goals from "../models/Goals"
 export default{
   data:()=>({
-    todos,
+    goals: Goals.State.Goals.Goals,
     newGoal:""
   }),
   methods: {
-    addGoal
+    addGoal(newGoal) {
+        this.Goals.push(
+        {
+            goal: newGoal
+        }
+    )
+    }
+  },
+  created(){
+        Goals.Init()
     }
   }
-
 </script>

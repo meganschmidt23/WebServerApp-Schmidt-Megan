@@ -13,7 +13,7 @@ function Login(username, password) {
   return CurrentUser = user;
 }
 
-module.export = {
+module.exports = {
   User,
   CurrentUser,
   Login
