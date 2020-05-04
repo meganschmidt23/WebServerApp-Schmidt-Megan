@@ -36,13 +36,20 @@ export default{
     newGoal:""
   }),
   methods: {
-    addGoal(newGoal) {
-        this.Goals.push(
-        {
-            goal: newGoal
+    async addGoal(goal){
+        try {
+            await Goals.State.Goals.Goals.addGoals(goal)
+        } catch (error) {
+            this.error = error;
         }
-    )
-    }
+    },
+    async deleteGoal(i){
+        try {
+            await Goals.State.Goals.Goals.removeGoal(i)
+        } catch (error) {
+            this.error = error
+        }
+    },
   },
   created(){
         Goals.Init()

@@ -8,5 +8,11 @@ export default {
                 this.State = x;
                 console.log(x);
      })
-    }
+    },
+    async addGoal(goal) {
+        await myFetch("/goals/addGoal", {goal})
+},
+    async removeGoal(i) {
+        await myFetch("/goals/removeGoals", {i})
+}
 }
