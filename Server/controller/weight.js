@@ -9,6 +9,12 @@ router
         res.send({
             Weight: weight.Weights
     })
+    .post('/addWeight', (req,res)=> res.send(
+        weight.addWeight(req.body.date, req.body.weight)
+        ))
+    .post('/removeWeight', (req,res)=> res.send(
+        weight.removeWeight(req.body.i)
+        ))
 });
 
 module.exports = router;

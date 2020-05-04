@@ -38,11 +38,21 @@ export default {
         weight: "",
     }),
     methods: {
-        addWeight() {
-            this.weights.push({date, weight})
+    async addWeight(date, weight){
+        try {
+            await Weight.State.Weight.addWeight(date, weight)
+        } catch (error) {
+            this.error = error;
         }
-
     },
+    async deleteWeight(i){
+        try {
+            await Weight.State.Weight.removeWeight(i)
+        } catch (error) {
+            this.error = error
+        }
+    },
+  },
     created(){
         Weight.Init()
     }
