@@ -33,18 +33,20 @@ export default {
         water: Water.State.Water[0].watertotal //index of where you're looking
     }),
     methods: {
-        plus1(){
-            this.water += 1;
-        },
-        plus5(){
-            this.water +=5;
-        },
-        plus10(){
-            this.water += 10;
-        },
-        plus20(){
-            this.water+=20
+        async add1(){
+        try {
+            await Goals.State.Goals.Goals.addGoals(goal)
+        } catch (error) {
+            this.error = error;
         }
+    },
+    async deleteGoal(i){
+        try {
+            await Goals.State.Goals.Goals.removeGoal(i)
+        } catch (error) {
+            this.error = error
+        }
+    },
     },
     created(){
         Water.Init()
