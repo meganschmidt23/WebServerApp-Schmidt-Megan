@@ -9,6 +9,7 @@ const loginController = require('./controller/login');
 const waterController = require('./controller/water');
 const weightsController = require('./controller/weight');
 const usersController = require('./controller/users');
+const discussionBoardController = require('./controller/discussionboard');
 
 
 const app = express();
@@ -40,6 +41,7 @@ app
     .use('/food', foodListController)
     .use('/weight', weightsController)
     .use('/users', usersController)
+    .use('/discussionboard', discussionBoardController)
     .use( (err, req, res, next ) => {
         console.error(err);
         const errorCode = err.code || 500;

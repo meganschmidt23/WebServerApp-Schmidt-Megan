@@ -64,7 +64,13 @@ const routes = [
     name: 'Profile',
     component: () => import('../views/Profile.vue'),
     meta: { isSecret: false }
-  }
+  },
+  {
+  path:'/discussionboard',
+  name: 'Discussion Board',
+  component: () => import('../views/DiscussionBoard.vue'),
+  meta: { isSecret: false}
+}
 ]
 
 const router = new VueRouter({
