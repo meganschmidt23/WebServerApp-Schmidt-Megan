@@ -11,15 +11,38 @@
     <article class="media">
         <figure class="media-left">
             <p class="image is-64x64">
-                <img :src="profilePic">
+                <img src="http://cs.newpaltz.edu/~schmidtm6/pics/ducky.jpg">
              </p>
         </figure>
-    <div class="media-content">
-        <div class="content" :key="name" </div>
-  <div class="media-right">
-    <button class="delete" @click="removePost"></button>
-  </div>
-</article>
+        <div class="media-content">
+            <p class="title is-4">John Smith</p>
+            <p class="subtitle is-6">@johnsmith</p>
+        </div>
+        <div class="content">
+            Hi everyone!
+        </div>    
+        <div class="media-right">
+            <button class="delete" @click="removePost"></button>
+        </div> 
+    </article>
+    <article class="media">
+        <figure class="media-left">
+            <p class="image is-64x64">
+                <img src="http://cs.newpaltz.edu/~schmidtm6/pics/ducky.jpg">
+             </p>
+        </figure>
+        <div class="media-content">
+            <p class="title is-4">John Smith</p>
+            <p class="subtitle is-6">@johnsmith</p>
+        </div>
+        <div class="content">
+            <textarea class="textarea" placeholder="Post your comment!"></textarea>
+            <input class="button" type="submit" value="Post">
+        </div>    
+        <div class="media-right">
+            <button class="delete" @click="removePost"></button>
+        </div> 
+    </article>
 </section>
 </template>
 
