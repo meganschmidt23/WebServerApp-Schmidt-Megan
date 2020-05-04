@@ -9,4 +9,10 @@ export default {
                 console.log(x);
      })
     },
+    async addFood(name, calories) {
+        await myFetch("/food/addFood", {name, calories})
+    },
+    async removeFood(i) {
+        await myFetch("/food/removeFood", {i})
+    }
 }

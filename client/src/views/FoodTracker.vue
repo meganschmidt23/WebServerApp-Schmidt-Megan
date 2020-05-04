@@ -10,12 +10,13 @@
                 <strong>Daily Food Intake</strong>
                 <section class="section">
                   <div class="container" v-for="x in food" :key="x.name">
-                      <h1>{{x.name}}</h1>
+                      <h1>{{x.name}}{{x.calories}}</h1>
                   </div>
                 </section>  
             <div class="media-content">
-              <input class="input" type="text" placeholder="Food item" v-model="newFood">
-                <input class="button" type="submit" value="Add another item" @click="addFood(newFood)"></div>
+              <input class="input" type="text" placeholder="Food item" v-model="name">
+              <input class="input" type="text" placeholder="Calories" v-model="calories">
+                <input class="button" type="submit" value="Add another item" @click="addFood(name,calories)"></div>
         </div>
     </div> 
   </section>
@@ -30,15 +31,23 @@ export default{
     newFood:""
   }),
   methods: {
-    addFood(newFood) {
-        this.Food.push(
-        {
-            name: newFood
+        async addFood(name, calories){
+        try {
+            await food.State.Food.addFood(name, calories)
+        } catch (error) {
+            this.error = error;
         }
-    )}},
+    },
+    async deleteFood(i){
+        try {
+            await Food.State.Food.removeFood(i)
+        } catch (error) {
+            this.error = error
+        }
+    },
     created(){
         Food.Init()
     }
   }
-
+}
 </script>

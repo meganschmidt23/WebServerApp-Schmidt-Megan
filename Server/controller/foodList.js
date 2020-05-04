@@ -10,6 +10,12 @@ router
             Food: food.foodList 
 
     })
+    .post('/addFood', (req,res)=> res.send(
+        food.addFood(req.body.name, req.body.calories)
+        ))
+    .post('/removeFood', (req,res)=> res.send(
+        food.removeFood(req.body.i)
+        ))
 });
 
 module.exports = router;
