@@ -9,14 +9,17 @@
             <i class="fas fa-bacon"></i><i class="fas fa-hamburger"></i><i class="fas fa-drumstick-bite"></i><i class="fas fa-cookie"></i>
                 <strong>Daily Food Intake</strong>
                 <section class="section">
-                  <div class="container" v-for="x in food" :key="x.name">
-                      <h1>{{x.name}}{{x.calories}}</h1>
-                  </div>
-                </section>  
+                  <div class="container" v-for="x in Food.State.Food" :key="x.name">
+                    <table class="table">
+                     <td> Food: {{x.name}}</td> <td>Calories: {{x.calories}} </td>
+                     <button class="delete" @click="deleteFood(i)"></button>
+                    </table>  
+                   </div> 
+                </section>    
             <div class="media-content">
-              <input class="input" type="text" placeholder="Food item" v-model="name">
-              <input class="input" type="text" placeholder="Calories" v-model="calories">
-                <input class="button" type="submit" value="Add another item" @click="addFood(name,calories)"></div>
+              <input class="input" type="text" placeholder="Food item" v-model="newFood">
+              <input class="input" type="text" placeholder="Calories" v-model="newCalories">
+              <input class="button" type="submit" value="Add another item" @click="addFood()"></div>
         </div>
     </div> 
   </section>
@@ -28,26 +31,27 @@ import Food from "../models/Food"
 export default{
   data:()=>({
     food: Food.State.Food,
-    newFood:""
+    newFood:"",
+    newCalories: 0,
+    Food
   }),
   methods: {
-        async addFood(name, calories){
+        async addFood(){
         try {
-            await food.State.Food.addFood(name, calories)
+            await Food.addFood(this.newFood, this.newCalories)
         } catch (error) {
             this.error = error;
         }
     },
     async deleteFood(i){
         try {
-            await Food.State.Food.removeFood(i)
+            await Food.removeFood(i)
         } catch (error) {
             this.error = error
         }
-    },
+    }},
     created(){
         Food.Init()
     }
   }
-}
 </script>

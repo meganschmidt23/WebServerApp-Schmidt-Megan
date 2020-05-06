@@ -43,7 +43,7 @@ const routes = [
     meta: { isSecret: false }
   },
   {
-    path: '/foodtracking',
+    path: '/food',
     name: 'Food Tracking',
     component: () => import('../views/FoodTracker.vue'),
     meta: { isSecret: false }

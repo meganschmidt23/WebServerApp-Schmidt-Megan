@@ -30,21 +30,15 @@ import Water from '../models/Water'
 
 export default {
     data: () => ({
-        water: Water.State.Water[0].watertotal //index of where you're looking
+        water: Water.State.Water[0].watertotal, //index of where you're looking,
+        i: CurrentUser.userID
     }),
     methods: {
         async add1(){
         try {
-            await Goals.State.Goals.Goals.addGoals(goal)
+            await Water.add1()
         } catch (error) {
             this.error = error;
-        }
-    },
-    async deleteGoal(i){
-        try {
-            await Goals.State.Goals.Goals.removeGoal(i)
-        } catch (error) {
-            this.error = error
         }
     },
     },

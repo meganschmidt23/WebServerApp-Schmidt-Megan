@@ -3,12 +3,12 @@ const discussionBoard = [
 ];
 
 function addPost(name, profilePic, post) {
-    this.discussionBoard.push(name, profilePic, post);
+    discussionBoard.push({name:name, profilePic:profilePic, post:post});
     return true;
 };
 
 function removePost(i){
-    this.discussionBoard.splice(i,1);
+    discussionBoard.splice(i,1);
     return true;
     };
 

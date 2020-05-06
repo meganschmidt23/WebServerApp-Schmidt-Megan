@@ -8,18 +8,17 @@
         </div>
      </div>
     </section>
-    <article class="media">
+    <article class="media" v-for="x in DiscussionBoard.State.DiscussionBoard" :key="x.post">
         <figure class="media-left">
             <p class="image is-64x64">
-                <img src="http://cs.newpaltz.edu/~schmidtm6/pics/ducky.jpg">
+                <img :src="x.profilePic">
              </p>
         </figure>
         <div class="media-content">
-            <p class="title is-4">John Smith</p>
-            <p class="subtitle is-6">@johnsmith</p>
+            <p class="title is-4"> {{x.name}}</p>
         </div>
         <div class="content">
-            Hi everyone!
+            {{x.post}}
         </div>    
         <div class="media-right">
             <button class="delete" @click="removePost"></button>
@@ -33,37 +32,41 @@
         </figure>
         <div class="media-content">
             <p class="title is-4">John Smith</p>
-            <p class="subtitle is-6">@johnsmith</p>
         </div>
         <div class="content">
-            <textarea class="textarea" placeholder="Post your comment!"></textarea>
-            <input class="button" type="submit" value="Post">
+            <textarea class="textarea" placeholder="Post your comment!" v-model="newPost"></textarea>
+            <input class="button" type="submit" @click="addPost()">
         </div>    
         <div class="media-right">
-            <button class="delete" @click="removePost"></button>
+            <button class="delete" @click="removePost(i)"></button>
         </div> 
     </article>
 </section>
 </template>
 
 <script>
+//import {CurrentUser} from '../models/Users'
 import DiscussionBoard from '../models/DiscussionBoard'
 export default {
   data:()=>({
-    goals: DiscussionBoard.State.DiscussionBoard,
-    newPost:""
+    posts: DiscussionBoard.State.DiscussionBoard,
+    newPost:"",
+    DiscussionBoard,
+    name: "John Smith",
+    profilePic: "http://cs.newpaltz.edu/~schmidtm6/pics/ducky.jpg"
+    //CurrentUser
   }),
   methods: {
-    async addPost(name, profilePic, post){
+    async addPost(){
         try {
-            await DiscussionBoard.State.DiscussionBoard.addPost(name, profilePic, post)
+            await DiscussionBoard.addPost(this.name, this.profilePic, this.newPost);
         } catch (error) {
             this.error = error;
         }
     },
-    async deletePost(i){
+    async removePost(i){
         try {
-            await DiscussionBoard.State.DiscussionBoard.removePost(i)
+            await DiscussionBoard.removePost(i)
         } catch (error) {
             this.error = error
         }

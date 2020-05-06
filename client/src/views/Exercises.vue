@@ -21,7 +21,7 @@
             </div>    
             <div class="media-content">
                 <input class="input" type="text" placeholder="New Exercise" v-model="newExercise" v-if="isAdmin">
-                    <input class="button" type="submit" value="Add another item" @click="addExercise(newExercise)"></div>        
+                    <input class="button" type="submit" value="Add another item" @click="addExercise()"></div>        
     </container>
     </section> 
 </template>   
@@ -33,19 +33,19 @@ export default{
   data:()=>({
     newExercise: "",
     exercises: Exercises.State.Exercises,
-    isAdmin: true
+    isAdmin: "true"
   }),
   methods: {
-    async addExercise(newExercise){
+    async addExercise(){
         try {
-            await Exercises.State.Exercises.addExercise(newExercise)
+            await Exercises.addExercise(this.newExercise)
         } catch (error) {
             this.error = error;
         }
     },
     async deleteExercise(i){
         try {
-            await Exercises.State.Exercises.removeExercise(i)
+            await Exercises.removeExercise(i)
         } catch (error) {
             this.error = error
         }

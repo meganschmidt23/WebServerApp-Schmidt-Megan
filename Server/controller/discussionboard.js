@@ -8,10 +8,10 @@ router
         DiscussionBoard: DiscussionBoard.discussionBoard
     }))
     .post('/addPost', (req,res)=> res.send(
-        DiscussionBoard.addPost(req.body.name, req.body.profilePic, requ.body.post)
+        DiscussionBoard.addPost(req.body.name, req.body.profilePic, req.body.post)
         ))
     .post('/removePost', (req,res)=> res.send(
-        DiscussionBoard.remove(Postreq.body.i)
+        DiscussionBoard.removePost(req.body.i)
         ))
 
 module.exports = router;

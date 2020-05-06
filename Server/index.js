@@ -3,7 +3,7 @@ const path = require('path');
 
 const aboutController = require('./controller/about');
 const exercisesController = require('./controller/exercises');
-const foodListController = require('./controller/foodList');
+const foodController = require('./controller/food');
 const goalsController = require('./controller/goals');
 const loginController = require('./controller/login');
 const waterController = require('./controller/water');
@@ -38,7 +38,7 @@ app
     .use('/goals', goalsController)
     .use('/login', loginController)
     .use('/water', waterController)
-    .use('/food', foodListController)
+    .use('/food', foodController)
     .use('/weight', weightsController)
     .use('/users', usersController)
     .use('/discussionboard', discussionBoardController)

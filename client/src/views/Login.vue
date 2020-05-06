@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import { Login } from "../models/Users";
+import {Login} from "../models/Users";
 
 export default {
     data: () => ({

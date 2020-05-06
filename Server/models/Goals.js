@@ -5,12 +5,12 @@ const Goals = [
 ];
 
 function addGoal(goal) {
-    this.Goals.push({goal});
+    Goals.push({goal:goal});
     return true;
 };
 
 function removeGoal(i){
-    this.Goals.splice(i,1);
+    Goals.splice(i,1);
     return true;
     };
 

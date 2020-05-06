@@ -15,12 +15,12 @@
                     </figure>
                 </div>
             </div>
-                <div class="container" v-for="x in goals" :key="x.goal">
+                <div class="container" v-for="x in Goals.State.Goals.Goals" :key="x.goal">
                     <h1>{{x.goal}}</h1>
                 </div>  
             <div class="media-content">
                 <input class="input" type="text" placeholder="Stay strong, Gorgeous" v-model="newGoal">
-                    <input class="button" type="submit" value="Add another item" @click="addGoal(newGoal)"></div>
+                    <input class="button" type="submit" value="Add another item" @click="addGoal"></div>
     
 
         </section>
@@ -33,19 +33,20 @@ import Goals from "../models/Goals"
 export default{
   data:()=>({
     goals: Goals.State.Goals.Goals,
-    newGoal:""
+    newGoal:"",
+    Goals
   }),
   methods: {
-    async addGoal(goal){
+    async addGoal(){
         try {
-            await Goals.State.Goals.Goals.addGoals(goal)
+            await Goals.addGoal(this.newGoal)
         } catch (error) {
             this.error = error;
         }
     },
     async deleteGoal(i){
         try {
-            await Goals.State.Goals.Goals.removeGoal(i)
+            await Goals.removeGoal(i)
         } catch (error) {
             this.error = error
         }

@@ -3,12 +3,12 @@ const Weights = [
 ]
 
 function addWeight(date, weight){
-    this.Weights.push({date, weight});
+    Weights.push({Date:date, Weight:weight});
     return true;
 };
 
 function removeWeight(i){
-    this.Weights.splice(i,1);
+    Weights.splice(i,1);
     return true
 }
 

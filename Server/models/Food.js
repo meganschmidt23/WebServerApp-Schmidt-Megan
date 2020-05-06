@@ -1,9 +1,9 @@
 const foodList = [
-    {name: "Example", calories:12}
+    {name: "Eggs", calories:12}
 ];
 
 function addFood(name, calories) {
-    this.foodList.push({name, calories});
+    foodList.push({name:name, calories:calories});
     return true;
 };
 

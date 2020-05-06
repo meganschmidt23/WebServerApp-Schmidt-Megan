@@ -3,12 +3,12 @@ const exerciseList = [
 ];
 
 function addExercise(newExercise) {
-    this.exerciseList.push(newExercise);
+    exerciseList.push({exercise:newExercise});
     return true;
 };
 
 function removeExercise(i){
-    this.exerciseList.splice(i,1);
+    exerciseList.splice(i,1);
     return true;
     };
 

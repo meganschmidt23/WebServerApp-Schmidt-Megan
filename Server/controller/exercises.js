@@ -8,7 +8,7 @@ router
         Exercises: Exercises.exerciseList
     }))
     .post('/addExercise', (req,res)=> res.send(
-        Exercises.addExercise(req.body.newExercise)
+        Exercises.addExercise(req.body.exercise)
         ))
     .post('/removeExercise', (req,res)=> res.send(
         Exercises.removeExercise(req.body.i)

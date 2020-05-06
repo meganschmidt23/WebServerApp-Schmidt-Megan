@@ -3,7 +3,7 @@ import myFetch from "./myFetch";
 export default {
     State: {},
     Init() {
-        myFetch('/exercises')
+        myFetch('/discussionboard')
             .then(x=> { 
                 this.State = x;
                 console.log(x);

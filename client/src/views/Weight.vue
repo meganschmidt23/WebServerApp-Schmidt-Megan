@@ -1,30 +1,16 @@
 <template>
 <section>
-  <div class="columns is-gapless">
       <div class="container">
         <div class="notification" v-for="x in Weight.State.Weight" :key="x.Date">
-            {{x.Date}}
+            <td>Date: {{x.Date}} </td> <td> Weight: {{x.Weight}}</td>
+            <button class="delete" @click="removeWeight(i)"></button>
         </div>
     </div>
-    <div class="column">
-        Date: 
-        <div class="control">
-            <input class="input" type="text" placeholder="Today's date" v-model="date">
-        </div>
-    </div>
-    <div class="container">
-        <div class="notification" v-for="x in Weight.State.Weight" :key="x.Weight">
-            {{x.Weight}}
-        </div>
-    </div>
-    <div class="column">
-       Weight:
-       <div class="control">
-            <input class="input" type="text" placeholder="lbs" v-model="weight">
-        </div>
-    </div>
-  </div>
-  <input class="button" type="submit" value="Submit input" @click="addWeight()">
+    <div class= "container">
+        <input class="input" type="text" placeholder="Today's date" v-model="newDate">
+        <input class="input" type="text" placeholder="lbs" v-model="newWeight">
+        <input class="button" type="submit" value="Submit input" @click="addWeight()">
+    </div>    
   </section>
 </template>
 
@@ -33,21 +19,20 @@ import Weight from '../models/Weight'
 export default {
     data:() => ({
         Weight,
-        weights: Weight.State.Weight,
-        date: "",
-        weight: "",
+        newDate: "",
+        newWeight: "",
     }),
     methods: {
-    async addWeight(date, weight){
+    async addWeight(){
         try {
-            await Weight.State.Weight.addWeight(date, weight)
+            await Weight.addWeight(this.newDate, this.newWeight)
         } catch (error) {
             this.error = error;
         }
     },
-    async deleteWeight(i){
+    async removeWeight(i){
         try {
-            await Weight.State.Weight.removeWeight(i)
+            await Weight.removeWeight(i)
         } catch (error) {
             this.error = error
         }

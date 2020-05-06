@@ -100,9 +100,12 @@
 </template>
 
 <script>
+import {CurrentUser} from '../models/Users'
 export default {
     data: () => ({
-        
-    })
+        name: CurrentUser.name,
+        username: CurrentUser.username,
+        profilePic: CurrentUser.profilePic
+        })
 }
 </script>

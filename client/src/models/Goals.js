@@ -13,6 +13,6 @@ export default {
         await myFetch("/goals/addGoal", {goal})
 },
     async removeGoal(i) {
-        await myFetch("/goals/removeGoals", {i})
+        await myFetch("/goals/removeGoal", {i})
 }
 }
