@@ -8,8 +8,8 @@ export default {
                 this.State = x;
                 console.log(x);
      })},
-     async addWeight(date, weight) {
-        await myFetch("/weight/addWeight", {date, weight})
+     async addWeight(Date, Weight) {
+        await myFetch("/weight/addWeight", {Date, Weight})
 },
     async removeGoal(i) {
         await myFetch("/weight/removeWeight", {i})

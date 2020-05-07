@@ -6,8 +6,8 @@ export default async function myFetch(url, data){
 
     let response;
     const headers = {};
-    if(CurrentUser && CurrentUser.userId != null){
-        headers.authorization = "bearer " + CurrentUser.userId
+    if(CurrentUser && CurrentUser.userID != null){
+        headers.authorization = "bearer " + CurrentUser.userID
     }
     if(data){
         response = await fetch(api_root + url, {

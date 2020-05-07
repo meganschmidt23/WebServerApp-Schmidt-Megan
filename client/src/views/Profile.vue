@@ -1,12 +1,16 @@
 <template>
   <div class="profile">
     <section class="section">
-        <figure class="image is-128x128">
-            <img src="https://i.pinimg.com/originals/c2/95/9c/c2959c63b540853bde6e90180359d8ce.jpg">
-        </figure>
         <div class="content">
-            <h1 class="title">Bobby Smith</h1>
-                        <p>Kingston, NY</p>
+            <figure class="image is-128x128">
+                <img :src="image">
+            </figure>
+        </div>
+    </section>
+    <section class="section">        
+        <div class="content">
+            <h1 class="title">{{name}}</h1>
+                        <p>{{city}}</p>
         </div>
     </section>
     <section>
@@ -100,12 +104,17 @@
 </template>
 
 <script>
-import {CurrentUser} from '../models/Users'
+import Profile from '../models/Profile'
 export default {
     data: () => ({
-        name: CurrentUser.name,
-        username: CurrentUser.username,
-        profilePic: CurrentUser.profilePic
-        })
+        Profile,
+        image: Profile.State.currUser.profilePic,
+        name: Profile.State.currUser.Name,
+        city: Profile.State.currUser.City
+
+        }),
+    created(){
+        Profile.Init()
+    }
 }
 </script>

@@ -21,6 +21,7 @@
       <router-link to="/about" class="navbar-item" active-class="is-current">About</router-link>
       <router-link to="/exercises" class="navbar-item" active-class="is-current">Exercises</router-link>
       <router-link to="/discussionboard" class="navbar-item" active-class="is-current">Discussion Board</router-link>
+      <router-link to="/profile" class="navbar-item" active-class="is-current">Profile</router-link>
 
 
       <div class="navbar-item has-dropdown is-hoverable">

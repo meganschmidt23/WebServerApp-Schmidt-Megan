@@ -8,7 +8,7 @@
     </div>
     <div class= "container">
         <input class="input" type="text" placeholder="Today's date" v-model="newDate">
-        <input class="input" type="text" placeholder="lbs" v-model="newWeight">
+        <input class="input" type="text" placeholder="lbs" v-model.number="newWeight">
         <input class="button" type="submit" value="Submit input" @click="addWeight()">
     </div>    
   </section>
@@ -20,7 +20,7 @@ export default {
     data:() => ({
         Weight,
         newDate: "",
-        newWeight: "",
+        newWeight: 0,
     }),
     methods: {
     async addWeight(){

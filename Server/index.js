@@ -5,7 +5,6 @@ const aboutController = require('./controller/about');
 const exercisesController = require('./controller/exercises');
 const foodController = require('./controller/food');
 const goalsController = require('./controller/goals');
-const loginController = require('./controller/login');
 const waterController = require('./controller/water');
 const weightsController = require('./controller/weight');
 const usersController = require('./controller/users');
@@ -24,7 +23,7 @@ app.use(function(req, res, next) {
 app.use(function(req, res, next) {
     const arr = (req.headers.authorization || "").split(" ");
     if(arr.length > 1 && arr[1] != null){
-        req.userId = +arr[1];
+        req.userID = +arr[1];
     }
     next();
 });
@@ -36,7 +35,6 @@ app
     .use('/about', aboutController)
     .use('/exercises', exercisesController)
     .use('/goals', goalsController)
-    .use('/login', loginController)
     .use('/water', waterController)
     .use('/food', foodController)
     .use('/weight', weightsController)

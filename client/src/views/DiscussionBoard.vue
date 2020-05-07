@@ -27,11 +27,11 @@
     <article class="media">
         <figure class="media-left">
             <p class="image is-64x64">
-                <img src="http://cs.newpaltz.edu/~schmidtm6/pics/ducky.jpg">
+                <img :src="image">
              </p>
         </figure>
         <div class="media-content">
-            <p class="title is-4">John Smith</p>
+            <p class="title is-4">{{name}}</p>
         </div>
         <div class="content">
             <textarea class="textarea" placeholder="Post your comment!" v-model="newPost"></textarea>
@@ -45,21 +45,18 @@
 </template>
 
 <script>
-//import {CurrentUser} from '../models/Users'
 import DiscussionBoard from '../models/DiscussionBoard'
 export default {
   data:()=>({
-    posts: DiscussionBoard.State.DiscussionBoard,
     newPost:"",
     DiscussionBoard,
-    name: "John Smith",
-    profilePic: "http://cs.newpaltz.edu/~schmidtm6/pics/ducky.jpg"
-    //CurrentUser
+    image: DiscussionBoard.State.currUser.profilePic,
+    name: DiscussionBoard.State.currUser.Name
   }),
   methods: {
     async addPost(){
         try {
-            await DiscussionBoard.addPost(this.name, this.profilePic, this.newPost);
+            await DiscussionBoard.addPost(this.newPost);
         } catch (error) {
             this.error = error;
         }

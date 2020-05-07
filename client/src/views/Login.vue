@@ -48,8 +48,8 @@ export default {
     methods: {
          async login(){
             try {
-                await Login(this.email, this.password);
-                this.$router.push('/game');
+                await Login(this.username, this.password);
+                this.$router.push('/profile');
             } catch (error) {
                 this.error = error;
             }

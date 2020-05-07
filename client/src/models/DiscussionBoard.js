@@ -9,8 +9,8 @@ export default {
                 console.log(x);
      })
     },
-    async addPost(name, profilePic, post) {
-        await myFetch("/discussionboard/addPost", {name, profilePic, post})
+    async addPost(post) {
+        await myFetch("/discussionboard/addPost", {post})
     },
     async removePost(i) {
         await myFetch("/discussionboard/removePost", {i})

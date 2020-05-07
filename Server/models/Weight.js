@@ -4,7 +4,7 @@ const Weights = [
 
 function addWeight(date, weight){
     Weights.push({Date:date, Weight:weight});
-    return true;
+    return Weights;
 };
 
 function removeWeight(i){
