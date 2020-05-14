@@ -34,7 +34,17 @@
             <p class="title is-4">{{name}}</p>
         </div>
         <div class="content">
-            <textarea class="textarea" placeholder="Post your comment!" v-model="newPost"></textarea>
+            <b-field label="Create a new post">
+            <b-autocomplete
+                rounded
+                v-model="newPost"
+                :data="filteredDataArray"
+                placeholder="Post your comment!"
+                icon="magnify"
+                clearable
+                @select="option => selected = option">
+            </b-autocomplete>
+            </b-field>
             <input class="button" type="submit" @click="addPost()">
         </div>    
         <div class="media-right">
@@ -49,10 +59,21 @@ import DiscussionBoard from '../models/DiscussionBoard'
 export default {
   data:()=>({
     newPost:"",
+    selected= '',
     DiscussionBoard,
     image: DiscussionBoard.State.currUser.profilePic,
     name: DiscussionBoard.State.currUser.Name
   }),
+  computed: {
+        filteredDataArray() {
+            return DiscussionBoard.State.currUser.post.filter((option) => {
+                return option
+                    .toString()
+                    .toLowerCase()
+                    .indexOf(this.name.toLowerCase()) >= 0
+                })
+            }
+        },
   methods: {
     async addPost(){
         try {

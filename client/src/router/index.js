@@ -1,10 +1,13 @@
 import Vue from 'vue'
+import Buefy from 'buefy'
+import 'buefy/dist/buefy.css'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 
 import { CurrentUser } from '../models/Users'
 
 Vue.use(VueRouter)
+Vue.use(Buefy)
 
 const routes = [
   {
