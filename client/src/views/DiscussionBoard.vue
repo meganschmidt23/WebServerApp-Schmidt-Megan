@@ -59,7 +59,7 @@ import DiscussionBoard from '../models/DiscussionBoard'
 export default {
   data:()=>({
     newPost:"",
-    selected= '',
+    selected:'',
     DiscussionBoard,
     image: DiscussionBoard.State.currUser.profilePic,
     name: DiscussionBoard.State.currUser.Name
