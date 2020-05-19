@@ -37,25 +37,25 @@ const routes = [
     path: '/weight',
     name: 'Weight',
     component: () => import('../views/Weight.vue'),
-    meta: { isSecret: false }
+    meta: { isSecret: true }
   },
   {
     path: '/water',
     name: 'Water',
     component: () => import('../views/Water.vue'),
-    meta: { isSecret: false }
+    meta: { isSecret: true }
   },
   {
     path: '/food',
     name: 'Food Tracking',
     component: () => import('../views/FoodTracker.vue'),
-    meta: { isSecret: false }
+    meta: { isSecret: true }
   },
   {
     path: '/goals',
     name: 'Goals',
     component: () => import('../views/Goals.vue'),
-    meta: { isSecret: false }
+    meta: { isSecret: true }
   },
   {
     path: '/exercises',
@@ -66,13 +66,13 @@ const routes = [
     path:'/profile',
     name: 'Profile',
     component: () => import('../views/Profile.vue'),
-    meta: { isSecret: false }
+    meta: { isSecret: true }
   },
   {
   path:'/discussionboard',
   name: 'Discussion Board',
   component: () => import('../views/DiscussionBoard.vue'),
-  meta: { isSecret: false}
+  meta: { isSecret: true}
 }
 ]
 
